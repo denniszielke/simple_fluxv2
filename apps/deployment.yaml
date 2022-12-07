@@ -1,7 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: simple-config
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dummy-logger
+  namespace: simple-config
 spec:
   replicas: 1 
   minReadySeconds: 10
